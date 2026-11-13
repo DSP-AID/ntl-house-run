@@ -1,0 +1,35 @@
+{
+  "task": "bnty_0595 name-that-llm offline OOF validation",
+  "date": "2026-11-13",
+  "protocol": "official train (2699 rows, 18 classes); member OOF logp from halley1812 artifacts; prompt-grouped splits; balanced accuracy",
+  "best_single_member_ba": 0.6205,
+  "greedy_full_fit_oof_ba": 0.6598,
+  "nested_cv_honest_ba": 0.6509,
+  "proven_trnhip_core_oof_ba": 0.652,
+  "scenario_forecast": {
+    "k1": 0.689,
+    "k2": 0.656,
+    "k3": 0.643,
+    "k6": 0.652,
+    "k18": 0.654,
+    "mix_mean": 0.657,
+    "mix_std": 0.009
+  },
+  "expected_lb_band": [
+    0.62,
+    0.7
+  ],
+  "rejected_tricks": {
+    "sinkhorn_alpha>0": "negative in all realistic scenarios (sim log 'sink*' deltas)",
+    "hungarian_group_dp": "test prompt-groups incomplete (forum: John K), simulator confirms",
+    "yauwes_npz_blend": "member rows misaligned with train ids (BA ~0.17), context only",
+    "typography_guardrails": "delta exactly 0 on the strong blend; kept as harmless hard guard"
+  },
+  "leaderboard_context": {
+    "leader": 0.769,
+    "top10": 0.747,
+    "best_public_notebook_rerun": 0.684,
+    "bounty_threshold": 0.79
+  },
+  "full_log": "oof_sim2.log"
+}

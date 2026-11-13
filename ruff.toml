@@ -1,0 +1,6 @@
+line-length = 120
+
+[lint]
+# BLE001: every member/step is fault-isolated by design (skip on failure)
+# SIM115/RUF015/F841-style nits not worth diff noise in vendored code
+ignore = ["BLE001", "SIM115", "RUF015", "E501"]

@@ -1,0 +1,96 @@
+{
+  "pool_hf": "kaggle/build_pool/pool_v2x.parquet",
+  "members": [
+    {
+      "name": "olmo13b_p4",
+      "hf": "artifacts/models/olmo13b_p4/full",
+      "base": "allenai/OLMo-2-1124-13B",
+      "w": 1.0,
+      "cw": 0.25
+    },
+    {
+      "name": "lora14b_p2x",
+      "hf": "artifacts/models/lora14b_p2x/full",
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 1.0,
+      "cw": 0.25
+    },
+    {
+      "name": "lora14b_p4",
+      "hf": "artifacts/models/lora14b_p4/full",
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 0.25,
+      "cw": 0.25
+    },
+    {
+      "name": "lora14b_e2",
+      "hf": "artifacts/models/lora14b_e2/full",
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 0.5,
+      "cw": 0.25
+    },
+    {
+      "name": "lora14b_p9",
+      "hf": "artifacts/models/lora14b_p9/full",
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 0.5,
+      "cw": 0.25
+    },
+    {
+      "name": "lora14b_p10",
+      "hf": "artifacts/models/lora14b_p10/full",
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 0.5,
+      "cw": 0.25
+    },
+    {
+      "name": "olmo13b_p5",
+      "hf": "artifacts/models/olmo13b_p5/full",
+      "base": "allenai/OLMo-2-1124-13B",
+      "w": 0.3,
+      "cw": 0.25
+    }
+  ],
+  "pub_members": [
+    {
+      "name": "q14v5",
+      "hf_prefix": "data/external/new/dhruvtibarewal_nlm-l24-adapters-v5",
+      "dirs": [
+        "q14v5",
+        "q14v5_f0",
+        "q14v5_f1",
+        "q14v5_f2",
+        "q14v5_f3",
+        "q14v5_f4"
+      ],
+      "base": "Qwen/Qwen3-14B-Base",
+      "w": 1.0,
+      "keep": 27
+    }
+  ],
+  "enc_members": [
+    {
+      "name": "deberta_p2x",
+      "hf": "artifacts/models/deberta_p2x/full",
+      "w": 0.4
+    }
+  ],
+  "tfidf_w": 0.25,
+  "tfidf_pool_w": 0.15,
+  "cluster_cut": 0.8,
+  "sinkhorn_alpha": 0.0,
+  "center_loo": true,
+  "_oof": {
+    "nested_cv_full_candidate": 0.6509,
+    "proven_core_only": 0.652,
+    "scenario_forecast_mean": 0.657,
+    "scenario_forecast_std": 0.009
+  },
+  "_sanity_ref": {
+    "olmo13b_p4": 0.871,
+    "lora14b_p2x": 0.879,
+    "lora14b_p4": 0.869,
+    "q14v5": 0.889
+  },
+  "_sanity_ref_note": "trnhip's published sanity accuracies (their padding protocol); our padded-run member accs should land within +-0.05"
+}
