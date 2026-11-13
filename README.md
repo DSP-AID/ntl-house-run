@@ -1,4 +1,4 @@
-# Name That LLM — house-run reproducible notebook (bnty_0595)
+# Name That LLM — house-run reproducible notebook (DAiL bnty_0599, re-listing of bnty_0595)
 
 Deterministic pipeline for the Kaggle competition [Name That LLM](https://www.kaggle.com/competitions/name-that-llm):
 given 26 text samples per prompt, identify which of 18 LLMs generated them (balanced accuracy).

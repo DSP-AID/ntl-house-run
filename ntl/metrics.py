@@ -1,9 +1,9 @@
 """Competition metric and diagnostics."""
 from __future__ import annotations
 
-import numpy as np
 import warnings
 
+import numpy as np
 from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 
 # small simulated pools may predict classes absent from y_true; recall is

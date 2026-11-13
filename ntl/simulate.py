@@ -20,7 +20,7 @@ k=1,2) and its mean gain over scenarios is above the seed/fold noise.
 """
 from __future__ import annotations
 
-from typing import Callable
+from collections.abc import Callable
 
 import numpy as np
 import pandas as pd

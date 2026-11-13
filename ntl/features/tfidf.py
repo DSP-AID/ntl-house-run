@@ -1,17 +1,14 @@
 """Sparse lexical/stylometric member: char + word TF-IDF -> linear model."""
 from __future__ import annotations
 
+import re
+
 import numpy as np
 from scipy.sparse import hstack
 from scipy.special import log_softmax
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS, TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
-
-
-import re
-
-from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 _WORD = re.compile(r"\w+|[^\w\s]")
 

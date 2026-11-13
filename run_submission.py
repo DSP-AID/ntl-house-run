@@ -1,4 +1,4 @@
-"""Name That LLM - reproducible Kaggle entry (house-run route for DAiL bnty_0595).
+"""Name That LLM - reproducible Kaggle entry (house-run route for DAiL bnty_0599 / ex-bnty_0595).
 
 Pipeline = halley1812/trnhip "ntl" LoRA24 ensemble (CC0 code + adapters) extended with
 the members that our offline OOF simulation selected, plus data-driven typography

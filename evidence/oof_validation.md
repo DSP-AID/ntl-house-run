@@ -19,7 +19,8 @@ Rejected additions (all measured, see log):
 |---|---|
 | Sinkhorn label-balanced assignment α>0 | negative in every realistic scenario; α=0 kept |
 | Hungarian / DP per-prompt group assignment | hidden test has incomplete per-prompt groups (host statement + forum), simulator confirms loss |
-| yauwes npz member blend | member rows misaligned with train ids (BA ≈ 0.17) |
+| yauwes npz member blend (65 members, incl. k1 student/GBDT/encoder readouts) | ids ARE aligned with train.csv (verified 2026-11-13; the earlier "BA≈0.17" was an inverse column-permutation bug, `a[:, remap]` instead of `a[:, np.argsort(remap)]`); with correct alignment honest nested-CV is **0.6446 vs 0.6494** plain zoo → still excluded |
+| per-member temperature calibration before log-pool greedy | nested-CV 0.6494 → 0.6494, zero delta; candidate.json fusion (cw=0.25 calib weights) already absorbs calibration |
 | typography guardrails | delta exactly 0 on the strong blend; kept as harmless hard guards against degenerate rows |
 
 Leaderboard reality (12 Nov 2026, markbarney.net terminal): leader 0.769, top-10 0.747,

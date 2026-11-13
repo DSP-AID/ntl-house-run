@@ -53,7 +53,7 @@ KEYWORDS = {
     "gate/hierarchy": r"\bgate\b|gates|hierarch|family",
     "generation/proxy": r"proxy|openrouter|generat",
 }
-NUM = re.compile(r"\b(CV|LB|OOF|public|private|bacc|balanced acc\w*)\W{0,3}(?:score\W{0,3})?(0\.\d{3,4})", re.I)
+NUM = re.compile(r"\b(CV|LB|OOF|public|private|bacc|balanced acc\w*)\W{0,3}(?:score\W{0,3})?(0\.\d{3,4})", re.IGNORECASE)
 TITLE_SCORE = re.compile(r"(0\.\d{3})")
 OUR_USERS = ("trnhip", "hieptran1812")
 DEADLINE = "2027-01-14"
@@ -385,7 +385,7 @@ def write_digest(topics: list[dict], kernels: list[dict], state: dict, lb: dict 
     ours = _our_sources()
     ds = Counter(d for k in kernels for d in k["datasets"])
     new_ds = [(d, c) for d, c in ds.most_common() if d and d not in ours and d not in state["datasets_seen"]]
-    weights = re.compile(r"lora|weight|model|head|adapter|safetensors|deberta|bert|qwen|glm|olmo|asset|code|atlas", re.I)
+    weights = re.compile(r"lora|weight|model|head|adapter|safetensors|deberta|bert|qwen|glm|olmo|asset|code|atlas", re.IGNORECASE)
     data_like = [(d, c) for d, c in new_ds if not weights.search(d)]
     L += ["## Actionable: new public DATA sources used by quality notebooks (not in our pool)", ""]
     L += [f"- `{d}` (used by {c} notebook(s))" for d, c in data_like] or ["- none"]
